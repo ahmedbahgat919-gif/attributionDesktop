@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Attribution Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--s:#fff;--s2:#f0f2f8;--b:#e3e6f0;--t:#12141c;--t2:#5b6376;--t3:#8c93a6;--a:#6a55ff;--g:#12a870;--r:#e5484d;--m:#1877f2;--k:#e5256b;--gg:#f5a524;--sh:0 1px 2px rgba(20,24,40,.06),0 8px 24px rgba(20,24,40,.05)}
+:root:not([data-theme=light]){color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a0c12;--s:#11141d;--s2:#171b27;--b:#232838;--t:#f2f4fa;--t2:#9aa2b8;--t3:#626a80;--a:#8b7bff;--g:#34d399;--r:#ff6b78;--sh:0 8px 30px rgba(0,0,0,.35)}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#0a0c12;--s:#11141d;--s2:#171b27;--b:#232838;--t:#f2f4fa;--t2:#9aa2b8;--t3:#626a80;--a:#8b7bff;--g:#34d399;--r:#ff6b78;--sh:0 8px 30px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--t);font:14px/1.5 Inter,system-ui,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);-webkit-font-smoothing:antialiased}
+.w{max-width:1180px;margin:0 auto;padding:22px 20px 70px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:16px;letter-spacing:-.3px}
+.lm{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--a),#b06bff);display:grid;place-items:center;color:#fff;box-shadow:0 6px 18px rgba(106,85,255,.4)}
+.btn{font:600 12.5px Inter;background:var(--s);color:var(--t);border:1px solid var(--b);border-radius:9px;padding:8px 13px;cursor:pointer}.btn:hover{border-color:var(--a)}
+h1{font-size:34px;letter-spacing:-1.2px;line-height:1.1;margin:0 0 8px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),#e25bd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--t2);max-width:620px;margin:0 0 22px}
+.up{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.dz{background:var(--s);border:1.5px dashed var(--b);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;box-shadow:var(--sh)}
+.dz:hover,.dz.over{border-color:var(--a);transform:translateY(-1px)}.dz.ok{border:1.5px solid var(--g)}
+.dz b{display:flex;gap:8px;align-items:center;font-size:13.5px}.dz i{font-style:normal;font:700 10px 'JetBrains Mono';color:var(--a);border:1px solid var(--a);border-radius:5px;padding:1px 6px}
+.dz p{margin:6px 0 0;font-size:12px;color:var(--t3);word-break:break-all}.dz.ok p{color:var(--g)}.dz input{display:none}
+#err{display:none;background:rgba(229,72,77,.1);border:1px solid var(--r);color:var(--r);padding:10px 14px;border-radius:10px;margin-bottom:18px}
+#app{display:none}
+.kpis{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:30px}
+.k{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:14px 16px;box-shadow:var(--sh)}
+.k small{color:var(--t3);font-size:11.5px;font-weight:600}.k div{font:700 22px 'JetBrains Mono';letter-spacing:-.5px;margin-top:4px}.k span{font-size:11px;color:var(--t3)}
+h2{font-size:17px;letter-spacing:-.3px;margin:30px 0 4px}.hint{color:var(--t3);font-size:12.5px;margin:0 0 14px}
+.bc{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:16px;padding:18px;box-shadow:var(--sh);position:relative;overflow:hidden}
+.card.f1::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--a),#e25bd0)}
+.bn{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}.av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;background:linear-gradient(135deg,var(--a),#e25bd0)}
+.rk{margin-left:auto;font:700 11px 'JetBrains Mono';color:var(--t3)}
+.big{font:800 38px 'JetBrains Mono';letter-spacing:-1.5px;margin:12px 0 0}.big small{font:500 12px Inter;color:var(--t3);letter-spacing:0}
+.bar{height:8px;border-radius:6px;background:var(--s2);display:flex;overflow:hidden;margin:10px 0 6px}.bar i{display:block;height:100%}
+.lg{flex-wrap:wrap;gap:4px 10px;display:flex;justify-content:space-between;font-size:11.5px;color:var(--t2)}.lg b{font-family:'JetBrains Mono'}
+.mi{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--b)}
+.mi small{display:block;color:var(--t3);font-size:11px}.mi b{font:700 15px 'JetBrains Mono'}
+.g{color:var(--g)}.r{color:var(--r)}.dm{color:var(--t3)}
+.two{display:grid;grid-template-columns:1fr 1.6fr;gap:14px}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:11px 0;border-bottom:1px solid var(--b);align-items:center}.row:last-child{border:0}
+.row .n{font-weight:600}.row .v{font:700 14px 'JetBrains Mono'}.row .pb{grid-column:1/3;height:5px;border-radius:4px;background:var(--s2);overflow:hidden}.row .pb i{display:block;height:100%;background:var(--a);border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--t3);padding:10px 12px;background:var(--s2);border-bottom:1px solid var(--b);position:sticky;top:0}
+td{padding:10px 12px;border-bottom:1px solid var(--b);vertical-align:middle}tr:last-child td{border:0}
+.n2{text-align:right;font-family:'JetBrains Mono';font-weight:600}th.n2{text-align:right}
+.tw{background:var(--s);border:1px solid var(--b);border-radius:16px;overflow:auto;max-height:560px;box-shadow:var(--sh)}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;color:#fff}.pM{background:var(--m)}.pT{background:var(--k)}.pG{background:var(--gg)}
+input.sp{width:92px;height:30px;text-align:right;background:var(--s2);border:1px solid var(--b);border-radius:8px;color:var(--t);font:600 12.5px 'JetBrains Mono';padding:0 8px}input.sp:focus{outline:0;border-color:var(--a)}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tab{font:600 12.5px Inter;padding:7px 13px;border-radius:20px;border:1px solid var(--b);background:var(--s);color:var(--t2);cursor:pointer}.tab.on{background:var(--a);border-color:var(--a);color:#fff}
+.ds{display:flex;gap:2px;align-items:flex-end;height:38px;margin-top:12px}.ds i{flex:1;background:var(--a);border-radius:3px 3px 0 0;min-height:2px;opacity:.85}
+.idl{font:500 10.5px 'JetBrains Mono';color:var(--t3);margin-top:2px}.pU{background:var(--r)}tr.um td{background:rgba(229,72,77,.07)}.qs{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}.qs label{display:block;font-size:11.5px;color:var(--t3);font-weight:600;margin-bottom:5px}.qs input.sp{width:150px;height:38px;text-align:left}.qs .btn{height:38px}.qs .pr{background:var(--a);border-color:var(--a);color:#fff}.sum{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--b)}.sum>div{flex:1;min-width:130px;background:var(--s2);border-radius:12px;padding:10px 12px}.sum small{display:block;color:var(--t3);font-size:11px;font-weight:600}.sum b{font:700 17px 'JetBrains Mono'}.sum span{display:block;font-size:11px;color:var(--t2)}.sum .tt{background:linear-gradient(135deg,var(--a),#e25bd0)}.sum .tt small,.sum .tt span,.sum .tt b{color:#fff}
+.vd{display:inline-block;margin-top:3px;font:700 9.5px Inter;padding:2px 7px;border-radius:20px;color:#fff;letter-spacing:.3px}.vd.g{background:var(--g)}.vd.y{background:#f5a524}.vd.r{background:var(--r)}.ofr-t{min-width:980px}.ofr-t th,.ofr-t td{white-space:nowrap}.ofr-t th.grp{text-align:center;color:var(--a);background:var(--s2);font-size:10px;letter-spacing:.5px;border-left:1px solid var(--b)}.ofr-t th.bgrp{color:var(--g)}.ofr-t td,.ofr-t th{border-left:1px solid var(--b)}.ofr-t td.sc,.ofr-t th.sc{position:sticky;left:0;background:var(--s);z-index:2;min-width:170px;text-align:left}.ofr-t th.sc{background:var(--s2);z-index:3}.ofi{width:66px}.bepill{display:inline-block;font:800 13px 'JetBrains Mono';padding:4px 10px;border-radius:8px;border:1px solid}.bepill.g{color:var(--g);background:rgba(18,168,112,.12);border-color:rgba(18,168,112,.35)}.bepill.r{color:var(--r);background:rgba(229,72,77,.12);border-color:rgba(229,72,77,.35)}
+
+@media(max-width:860px){.up,.bc,.two{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}}
+</style></head><body><div class="w">
+<div class="top"><div class="logo"><div class="lm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18l5-9 4 5 3-4 4 6"/></svg></div>Attribution Pro</div><button class="btn" id="th">Theme</button></div>
+<h1>See which <em>media buyer</em>, platform & offer<br>is really winning.</h1>
+<p class="sub">Upload the campaign sheet, your Easy Orders export and (optionally) daily spend. Everything is computed in your browser.</p>
+<div class="up">
+<label class="dz" id="d1"><b><i>01</i>Campaigns sheet</b><p>Campaign Id · Name · Offer · Media buyer · Platform</p><input type="file" accept=".xlsx,.xls,.csv"></label>
+<label class="dz" id="d2"><b><i>02</i>Orders export</b><p>Easy Orders (Utm Campaign, Product Name, CreatedAt)</p><input type="file" accept=".xlsx,.xls,.csv"></label>
+<label class="dz" id="d3"><b><i>03</i>Daily spend <span class="dm">(optional)</span></b><p>Date · Campaign Id/Name · Spend — Meta, TikTok or Google export</p><input type="file" accept=".xlsx,.xls,.csv" multiple></label>
+</div><div id="err"></div>
+<div id="app">
+<div class="kpis" id="kp"></div>
+<h2>Media buyer leaderboard</h2><p class="hint">Orders, platform split and CPA calculated on each buyer's own campaigns only.</p><div class="bc" id="bc"></div><h2>Quick spend entry</h2><p class="hint">No sheet needed: pick a buyer and type his total Meta / TikTok / Google spend.</p><div id="qs"></div>
+<div class="two"><div><h2>Platform split</h2><p class="hint">From the campaign's platform in your sheet.</p><div class="card" id="pf"></div></div>
+<div><h2>Orders per offer</h2><p class="hint">Each campaign's intended offer, orders it generated.</p><div class="card" id="of"></div></div></div>
+<div id="ofr"></div><div id="bo"></div><div id="dly"></div>
+<h2>All campaigns</h2><p class="hint">Type total spend per campaign to override uploaded spend. CPA updates everywhere instantly.</p>
+<div class="tabs" id="tb"></div><div class="tw"><table><thead><tr><th>Campaign</th><th>Buyer</th><th>Platform</th><th>Offer</th><th class="n2">Orders</th><th class="n2">Match</th><th class="n2">Spend</th><th class="n2">CPA</th></tr></thead><tbody id="tbd"></tbody></table></div>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+var $=function(i){return document.getElementById(i)},N=function(s){return String(s==null?'':s).replace(/\s+/g,' ').trim()},K=function(s){return N(s).toLowerCase()};
+var PL=['Meta','TikTok','Google'],PC={Meta:'var(--m)',TikTok:'var(--k)',Google:'var(--gg)'},CA=null,OR=null,SP=[],man={},flt='All',COL={Ahmed:'#6a55ff',Mostafa:'#e25bd0',Amr:'#12a870'};
+try{man=JSON.parse(localStorage.getItem('apm')||'{}')}catch(e){}
+var bs={},qb='';try{bs=JSON.parse(localStorage.getItem('apb')||'{}')}catch(e){}
+function pc(s,o){return s>0&&o?' · CPA <b>'+f(s/o,1)+'</b>':''}
+function sv(){try{localStorage.setItem('apb',JSON.stringify(bs))}catch(e){}render()}
+function qsr(B,TS){var sm='<div class="sum">'+B.filter(function(b){return b.k!='Unassigned'||b.spend}).map(function(b){return '<div><small>'+b.k+'</small><b>'+f(b.spend)+'</b><span>'+PL.map(function(p){return p+' '+f(b.ps[p])}).join(' · ')+'</span></div>'}).join('')+'<div class="tt"><small>Total spend</small><b>'+f(PL.reduce(function(s,p){return s+TS[p]},0))+'</b><span>'+PL.map(function(p){return p+' '+f(TS[p])}).join(' · ')+'</span></div></div>';var nm=[];D.list.forEach(function(c){if(c.buyer!='Unassigned'&&nm.indexOf(c.buyer)<0)nm.push(c.buyer)});if(!qb||(qb!='_team'&&nm.indexOf(qb)<0))qb=nm[0]||'';var o=bs[qb]||{};$('qs').innerHTML='<div class="card"><div class="tabs">'+nm.map(function(n){return '<button class="tab'+(n==qb?' on':'')+'" data-b="'+n+'">'+n+'</button>'}).join('')+'</div><div class="qs">'+PL.map(function(p){return '<div><label>'+p+' total spend</label><input class="sp" data-p="'+p+'" inputmode="decimal" placeholder="0" value="'+(o[p]||'')+'"></div>'}).join('')+'<button class="btn pr" id="qsv">Save for '+qb+'</button><button class="btn" id="qcl">Clear</button></div>'+sm+'<p class="hint" style="margin:12px 0 0">Replaces campaign-level spend for this buyer and platform. Totals add up automatically across all buyers.</p></div>';[].forEach.call($('qs').querySelectorAll('[data-b]'),function(b){b.onclick=function(){qb=b.dataset.b;render()}});$('qsv').onclick=function(){var r={};[].forEach.call($('qs').querySelectorAll('input[data-p]'),function(i){r[i.dataset.p]=i.value});bs[qb]=r;sv()};$('qcl').onclick=function(){delete bs[qb];sv()}}
+var f=function(n,d){return n==null||n===''||isNaN(n)?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:d==null?0:d})};
+var ar=function(s){return '<span dir="auto" style="unicode-bidi:isolate">'+N(s).replace(/</g,'&lt;')+'</span>'};
+function fk(row,names){var ks=Object.keys(row);for(var i=0;i<names.length;i++)for(var j=0;j<ks.length;j++)if(K(ks[j]).indexOf(names[i])===0||K(ks[j])===names[i])return ks[j];return null}
+function day(v){if(v instanceof Date)return v.getFullYear()+'-'+('0'+(v.getMonth()+1)).slice(-2)+'-'+('0'+v.getDate()).slice(-2);var s=String(v||'');return /^\d{4}-\d\d-\d\d/.test(s)?s.slice(0,10):''}
+function rd(file,cb){var r=new FileReader();r.onload=function(e){try{var wb=XLSX.read(new Uint8Array(e.target.result),{type:'array',cellDates:true,raw:false,dateNF:'yyyy-mm-dd'});cb(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:'',raw:true}))}catch(x){er('Could not read '+file.name)}};r.readAsArrayBuffer(file)}
+function er(m){$('err').textContent=m;$('err').style.display=m?'block':'none'}
+['d1','d2','d3'].forEach(function(id,ix){var d=$(id),inp=d.querySelector('input');
+ function go(files){er('');var n=[],fl=[].slice.call(files),left=fl.length;if(ix==2)SP=[];fl.forEach(function(file){rd(file,function(rows){d.classList.add('ok');n.push(file.name);d.querySelector('p').textContent=n.join(' · ');if(ix==0)CA=rows;if(ix==1)OR=rows;if(ix==2)rows.forEach(function(r){SP.push(r)});if(--left==0)run()})})}
+ inp.onchange=function(){if(inp.files.length)go(inp.files)};
+ d.ondragover=function(e){e.preventDefault();d.classList.add('over')};d.ondragleave=function(){d.classList.remove('over')};
+ d.ondrop=function(e){e.preventDefault();d.classList.remove('over');go(e.dataTransfer.files)}});
+$('th').onclick=function(){var h=document.documentElement,c=h.getAttribute('data-theme');h.setAttribute('data-theme',(c||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))=='dark'?'light':'dark')};
+var D;
+function run(){if(!CA||!OR)return;
+ var c0=CA[0],ki=fk(c0,['campaign id','id']),kn=fk(c0,['campaign name','name']),ko=fk(c0,['offer']),kb=fk(c0,['media']),kp=fk(c0,['platform']);
+ if(!ki||!kb||!kp){return er('Campaign sheet needs Campaign Id, Media buyer and platform columns.')}
+ var cm={},nm={},list=[];CA.forEach(function(r){var k=K(r[ki]);if(!k||cm[k])return;var c={id:N(r[ki]),key:k,name:N(r[kn]||r[ki]),offer:N(r[ko]),buyer:N(r[kb])||'Unassigned',plat:/tik/i.test(r[kp])?'TikTok':/goo|gads|youtube|search|pmax/i.test(r[kp])?'Google':'Meta',orders:0,on:0,days:{},sd:{}};cm[k]=c;nm[K(c.name)]=c;list.push(c)});
+ var o0=OR[0],ku=fk(o0,['utm campaign']),kpn=fk(o0,['product name']),kc=fk(o0,['createdat','created']);
+ if(!ku)return er('Orders sheet needs a Utm Campaign column.');
+ var nocamp=0,unm={},dates={};
+ OR.forEach(function(r){var u=K(r[ku]);if(!u){nocamp++;return}var c=cm[u];if(!c){var q=unm[u]||(unm[u]={n:0,raw:N(r[ku])});q.n++;return}c.orders++;if(K(r[kpn])==K(c.offer))c.on++;var d=kc?day(r[kc]):'';if(d){c.days[d]=(c.days[d]||0)+1;dates[d]=1}});
+ var s0=SP[0]||{},ksd=fk(s0,['date','day','reporting starts']),ksi=fk(s0,['campaign id','campaign_id']),ksn=fk(s0,['campaign name','campaign_name','campaign']),kss=fk(s0,['amount spent','spend','cost','total cost']);
+ SP.forEach(function(r){var c=cm[K(r[ksi])]||nm[K(r[ksn])]||cm[K(r[ksn])];var a=parseFloat(String(r[kss]).replace(/[^\d.\-]/g,''));if(!c||isNaN(a))return;var d=ksd?day(r[ksd]):'';c.sd[d||'_']=(c.sd[d||'_']||0)+a;if(d)dates[d]=1});
+ D={list:list,nocamp:nocamp,unm:unm,dates:Object.keys(dates).sort(),tot:OR.length};render()}
+function sp(c){if(man[c.key]!=null&&man[c.key]!=='')return +man[c.key]||0;var t=0;for(var d in c.sd)t+=c.sd[d];return t}
+function agg(keyf){var m={};D.list.forEach(function(c){var k=keyf(c),a=m[k]||(m[k]={k:k,orders:0,on:0,spend:0,n:0,o:{Meta:0,TikTok:0,Google:0},s:{Meta:0,TikTok:0,Google:0},days:{}});a.orders+=c.orders;a.on+=c.on;var s=sp(c);a.spend+=s;a.s[c.plat]+=s;if(c.orders)a.n++;a.o[c.plat]+=c.orders;for(var d in c.days)a.days[d]=(a.days[d]||0)+c.days[d]});return Object.keys(m).map(function(k){return m[k]}).sort(function(a,b){return b.orders-a.orders})}
+var OF=[{k:'box5',n:'بوكس التوفير 5 قطع',sell:999,cost:546,rr:.3,ship:85,pack:12,rship:75,conf:.675},{k:'9pm',n:'9pm night out',sell:999,cost:335,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'arojet',n:'أروجيت بينك 200 مل',sell:999,cost:387,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'glitch',n:'جليتش 150 مل',sell:999,cost:387,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'wild',n:'وايلد كولت 200 مل',sell:799,cost:330,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'lip',n:'ليب ستيك 150 مل',sell:999,cost:387,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'boxarojet',n:'بوكس أروجيت بينك',sell:1499,cost:835,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'abhar',n:'عرض الابهار',sell:999,cost:560,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'elite',n:'عرض النخبة',sell:999,cost:560,rr:.2,ship:85,pack:12,rship:75,conf:.675},{k:'female',n:'عرض الانوثة',sell:999,cost:560,rr:.2,ship:85,pack:12,rship:75,conf:.675}];
+var OFS=OF.map(function(o){return Object.assign({},o)});
+try{var sv0=JSON.parse(localStorage.getItem('apo')||'null');if(sv0)OFS=OF.map(function(o){return Object.assign({},o,sv0[o.k]||{})})}catch(e){}
+function ofc(o){var del=o.sell-o.cost-o.ship-o.pack,loss=o.ship+o.pack+o.rship,be=(1-o.rr)*del-o.rr*loss;return {del:del,loss:loss,be:be,raw:be*o.conf}}
+function okey(n){n=N(n);if(/بوكس.*(اروجيت|أروجيت)|(اروجيت|أروجيت).*بوكس/.test(n))return 'boxarojet';if(/توفير|خمس/.test(n))return 'box5';if(/9 ?pm|night/i.test(n))return '9pm';if(/اروجيت|أروجيت/.test(n))return 'arojet';if(/جليتش|glitch/i.test(n))return 'glitch';if(/كولت|wild/i.test(n))return 'wild';if(/ليب/.test(n))return 'lip';if(/الابهار/.test(n))return 'abhar';if(/النخبة/.test(n))return 'elite';if(/الانوثة/.test(n))return 'female';return null}
+function vdict(c,cp){var o=OFS.filter(function(x){return x.k==okey(c.offer)})[0];if(!o)return null;var be=ofc(o).raw;if(be<=0)return {t:'Kill',c:'r'};if(cp<=be*.7)return {t:'Scale',c:'g'};if(cp<=be)return {t:'Keep',c:'y'};return {t:'Kill',c:'r'}}
+function cpaCell(c,s){if(!s||!c.orders)return '—';var cp=s/c.orders,v=vdict(c,cp);return f(cp,1)+(v?'<br><span class="vd '+v.c+'">'+v.t+'</span>':'')}
+function ofrRender(){
+ var inp=function(o,fld,v){return '<input class="sp ofi" data-k="'+o.k+'" data-f="'+fld+'" value="'+v+'" inputmode="decimal">'};
+ var h='<h2>Offers & break-even</h2><p class="hint">Yellow inputs are editable. Flow: order → confirmed → shipped → delivered or returned. Only confirmed orders cost shipping and packaging, and returns go back to stock so only their shipping is lost. <b>Per order</b> is the number to compare your raw CPA against: Scale below 70% of it, Keep up to 100%, Kill above.</p>'
+  +'<div class="tw"><table class="ofr-t"><thead>'
+  +'<tr><th rowspan="2" class="sc">Offer</th><th colspan="2" class="grp">Prices (EGP)</th><th colspan="2" class="grp">Rates</th><th colspan="3" class="grp">Costs per confirmed order</th><th colspan="2" class="grp">Result per confirmed order</th><th colspan="2" class="grp bgrp">Break-even CPA</th></tr>'
+  +'<tr><th class="n2">Sell</th><th class="n2">Product</th><th class="n2">Confirm %</th><th class="n2">Return %</th><th class="n2">Shipping</th><th class="n2">Packaging</th><th class="n2">Return ship</th><th class="n2">Delivered profit</th><th class="n2">Loss / return</th><th class="n2">Per confirmed</th><th class="n2">Per order</th></tr>'
+  +'</thead><tbody>';
+ OFS.forEach(function(o){var c=ofc(o);
+  h+='<tr><td class="sc"><b>'+ar(o.n)+'</b></td>'
+   +'<td class="n2">'+inp(o,'sell',o.sell)+'</td><td class="n2">'+inp(o,'cost',o.cost)+'</td>'
+   +'<td class="n2">'+inp(o,'conf',Math.round(o.conf*1000)/10)+'</td><td class="n2">'+inp(o,'rr',Math.round(o.rr*1000)/10)+'</td>'
+   +'<td class="n2">'+inp(o,'ship',o.ship)+'</td><td class="n2">'+inp(o,'pack',o.pack)+'</td><td class="n2">'+inp(o,'rship',o.rship)+'</td>'
+   +'<td class="n2">'+f(c.del)+'</td><td class="n2 dm">'+f(c.loss)+'</td>'
+   +'<td class="n2">'+f(c.be,1)+'</td>'
+   +'<td class="n2"><span class="bepill '+(c.raw>0?'g':'r')+'">'+f(c.raw,1)+'</span></td></tr>'});
+ $('ofr').innerHTML=h+'</tbody></table></div>';
+ [].forEach.call($('ofr').querySelectorAll('input.ofi'),function(i){i.onchange=function(){var o=OFS.filter(function(x){return x.k==i.dataset.k})[0],v=+i.value||0;o[i.dataset.f]=(i.dataset.f=='rr'||i.dataset.f=='conf')?v/100:v;var st={};OFS.forEach(function(x){st[x.k]={sell:x.sell,cost:x.cost,rr:x.rr,conf:x.conf,ship:x.ship,pack:x.pack,rship:x.rship}});try{localStorage.setItem('apo',JSON.stringify(st))}catch(e){}render()}})}
+function render(){$('app').style.display='block';er('');ofrRender();
+ var att=0,spend=0;D.list.forEach(function(c){att+=c.orders});var nd=Math.max(D.dates.length,1),B=agg(function(c){return c.buyer}),P=agg(function(c){return c.plat}),O=agg(function(c){return c.offer||'(no offer)'}),on=0;D.list.forEach(function(c){on+=c.on});B.forEach(function(b){var o=bs[b.k]||{};b.ps={};b.spend=0;PL.forEach(function(p){var v=o[p];b.ps[p]=v!==undefined&&v!==''?(+v||0):b.s[p];b.spend+=b.ps[p]});spend+=b.spend});var TS={};PL.forEach(function(p){TS[p]=B.reduce(function(s,b){return s+b.ps[p]},0);if(!P.some(function(x){return x.k==p}))P.push({k:p,orders:0,on:0,spend:0,n:0})});spend=PL.reduce(function(s,p){return s+TS[p]},0);P.forEach(function(p){p.spend=TS[p.k]});
+ var bl=spend>0&&att?spend/att:null,un=0;for(var u in D.unm)un+=D.unm[u].n;
+ $('kp').innerHTML=[['Total orders',f(D.tot),nd+' day'+(nd>1?'s':'')],['From campaigns',f(att),f(att/D.tot*100)+'%'],['No campaign',f(D.nocamp),'organic / direct'],['Unmapped',f(un),Object.keys(D.unm).length+' unknown ids'],['Offer match',att?f(on/att*100)+'%':'—',f(on)+' on-offer'],['Total spend',spend?f(spend):'—',PL.map(function(p){return p+' '+f(TS[p])}).join(' · ')],['Blended CPA',bl?f(bl,1):'—','spend ÷ campaign orders']].map(function(k){return '<div class="k"><small>'+k[0]+'</small><div>'+k[1]+'</div><span>'+k[2]+'</span></div>'}).join('');
+ $('bc').innerHTML=B.map(function(b,i){var cp=b.spend>0&&b.orders?b.spend/b.orders:null,cl=cp&&bl?(cp<=bl?'g':'r'):'dm',mx=Math.max.apply(0,D.dates.map(function(d){return b.days[d]||0}))||1;
+ return '<div class="card'+(i==0?' f1':'')+'"><div class="bn"><div class="av">'+b.k[0]+'</div>'+b.k+'<span class="rk">#'+(i+1)+'</span></div><div class="big">'+f(b.orders)+' <small>orders · '+f(b.orders/nd,1)+'/day</small></div>'
+ +'<div class="bar">'+PL.map(function(p){return '<i style="width:'+(b.orders?b.o[p]/b.orders*100:0)+'%;background:'+PC[p]+'"></i>'}).join('')+'</div><div class="lg">'+PL.map(function(p){return '<span>'+p+' <b>'+f(b.o[p])+'</b>'+pc(b.ps[p],b.o[p])+'</span>'}).join('')+'</div>'
+ +'<div class="ds">'+D.dates.map(function(d){return '<i title="'+d+': '+(b.days[d]||0)+'" style="height:'+((b.days[d]||0)/mx*100)+'%"></i>'}).join('')+'</div>'
+ +'<div class="mi"><div><small>CPA</small><b class="'+cl+'">'+(cp?f(cp,1):'—')+'</b></div><div><small>Spend</small><b>'+(b.spend?f(b.spend):'—')+'</b></div><div><small>Share</small><b>'+f(b.orders/(att||1)*100)+'%</b></div></div></div>'}).join('');
+ var pm=Math.max.apply(0,P.map(function(p){return p.orders}))||1;
+ $('pf').innerHTML=P.filter(function(p){return p.orders||p.spend}).map(function(p){var cp=p.spend>0&&p.orders?p.spend/p.orders:null;return '<div class="row"><div class="n"><span class="pill '+'p'+p.k[0]+'">'+p.k+'</span> <span class="dm">'+f(p.orders/(att||1)*100)+'% · CPA '+(cp?f(cp,1):'—')+'</span></div><div class="v">'+f(p.orders)+'</div><div class="pb"><i style="width:'+p.orders/pm*100+'%;background:'+PC[p.k]+'"></i></div></div>'}).join('');
+ var om=O[0]?O[0].orders:1;$('of').innerHTML=O.filter(function(o){return o.orders}).map(function(o){return '<div class="row"><div class="n">'+ar(o.k)+' <span class="dm">· '+f(o.n)+' campaigns · '+f(o.on/o.orders*100)+'% match</span></div><div class="v">'+f(o.orders)+'</div><div class="pb"><i style="width:'+o.orders/om*100+'%"></i></div></div>'}).join('');
+ var bn2=B.filter(function(b){return b.k!='Unassigned'||b.orders}).map(function(b){return b.k}),M={},mx=1;D.list.forEach(function(c){if(!c.orders)return;var o=c.offer||'(no offer)';M[o]=M[o]||{t:0};M[o][c.buyer]=(M[o][c.buyer]||0)+c.orders;M[o].t+=c.orders});var ofs=Object.keys(M).sort(function(a,b){return M[b].t-M[a].t});ofs.forEach(function(o){bn2.forEach(function(b){mx=Math.max(mx,M[o][b]||0)})});
+ $('bo').innerHTML='<h2>Orders per buyer by offer</h2><p class="hint">How many orders each media buyer got from each offer.</p><div class="tw"><table><thead><tr><th>Offer</th>'+bn2.map(function(b){return '<th class="n2">'+b+'</th>'}).join('')+'<th class="n2">Total</th></tr></thead><tbody>'+ofs.map(function(o){return '<tr><td>'+ar(o)+'</td>'+bn2.map(function(b){var v=M[o][b]||0;return '<td class="n2" style="background:rgba(106,85,255,'+(v?(.08+.4*v/mx).toFixed(2):0)+')">'+(v||'<span class="dm">—</span>')+'</td>'}).join('')+'<td class="n2"><b>'+M[o].t+'</b></td></tr>'}).join('')+'<tr><td><b>Total</b></td>'+bn2.map(function(b){return '<td class="n2"><b>'+B.filter(function(x){return x.k==b})[0].orders+'</b></td>'}).join('')+'<td class="n2"><b>'+att+'</b></td></tr></tbody></table></div>';
+ var hs=D.list.some(function(c){return Object.keys(c.sd).some(function(d){return d!='_'})});
+ if(hs&&D.dates.length){var bn=B.filter(function(b){return b.k!='Unassigned'||b.orders});var h='<h2>Daily CPA by media buyer</h2><p class="hint">Orders / spend / CPA per day, each buyer on his own campaigns.</p><div class="tw"><table><thead><tr><th>Date</th>'+bn.map(function(b){return '<th class="n2">'+b.k+'</th>'}).join('')+'</tr></thead><tbody>';
+  D.dates.slice().reverse().forEach(function(d){h+='<tr><td>'+d+'</td>'+bn.map(function(b){var o=0,s=0;D.list.forEach(function(c){if(c.buyer==b.k){o+=c.days[d]||0;s+=c.sd[d]||0}});return '<td class="n2">'+o+' / '+(s?f(s):'—')+' / <span class="'+(s&&o?'g':'dm')+'">'+(s&&o?f(s/o,1):'—')+'</span></td>'}).join('')+'</tr>'});$('dly').innerHTML=h+'</tbody></table></div>'}else $('dly').innerHTML='';
+ var ts=['All'].concat(PL).concat(B.map(function(b){return b.k})).concat(Object.keys(D.unm).length?['Unmapped']:[]);$('tb').innerHTML=ts.map(function(t){return '<button class="tab'+(t==flt?' on':'')+'" data-t="'+t+'">'+t+'</button>'}).join('');
+ [].forEach.call($('tb').children,function(b){b.onclick=function(){flt=b.dataset.t;render()}});
+ $('tbd').innerHTML=D.list.filter(function(c){return flt=='All'||c.plat==flt||c.buyer==flt}).sort(function(a,b){return b.orders-a.orders}).map(function(c){var s=sp(c),v=man[c.key]!=null?man[c.key]:(s?Math.round(s*100)/100:'');return '<tr><td>'+ar(c.name)+'<div class="idl">ID: '+ar(c.id)+'</div></td><td>'+c.buyer+'</td><td><span class="pill '+'p'+c.plat[0]+'">'+c.plat+'</span></td><td>'+ar(c.offer)+'</td><td class="n2">'+c.orders+'</td><td class="n2 '+(c.orders?(c.on==c.orders?'g':'r'):'dm')+'">'+(c.orders?f(c.on/c.orders*100)+'%':'—')+'</td><td class="n2"><input class="sp" data-k="'+c.key.replace(/"/g,'&quot;')+'" value="'+v+'" placeholder="0" inputmode="decimal"></td><td class="n2">'+cpaCell(c,s)+'</td></tr>'}).join('');
+ qsr(B,TS);if(flt=='All'||flt=='Unmapped')$('tbd').innerHTML+=Object.keys(D.unm).sort(function(a,b){return D.unm[b].n-D.unm[a].n}).map(function(k){var q=D.unm[k];return '<tr class="um"><td>'+ar(q.raw)+' <span class="pill pU">NOT IN SHEET</span><div class="idl">ID: '+N(q.raw).replace(/</g,'&lt;')+'</div></td><td class="dm">Not assigned</td><td class="dm">—</td><td class="dm">—</td><td class="n2">'+q.n+'</td><td class="n2 dm">—</td><td class="n2 dm">—</td><td class="n2 dm">—</td></tr>'}).join('');
+[].forEach.call(document.querySelectorAll('#tbd input.sp'),function(i){i.onchange=function(){man[i.dataset.k]=i.value;try{localStorage.setItem('apm',JSON.stringify(man))}catch(e){}render()}})}
+</script></body></html>
